@@ -1,0 +1,60 @@
+{
+  "fill" : {
+    "solid" : "display-p3:1.00000,0.97747,0.98126,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "glass" : true,
+          "image-name" : "Codex 이미지 2026년 8월 18일 오후 06_50_31.png",
+          "name" : "Codex 이미지 2026년 8월 18일 오후 06_50_31",
+          "position" : {
+            "scale" : 0.73,
+            "translation-in-points" : [
+              -27.068375755774696,
+              -25.549999999999955
+            ]
+          }
+        }
+      ],
+      "refractivity" : {
+        "depth" : 0,
+        "enabled" : false,
+        "strength" : 0.5
+      },
+      "shadow-specializations" : [
+        {
+          "value" : {
+            "kind" : "neutral",
+            "opacity" : 1.28
+          }
+        },
+        {
+          "appearance" : "dark",
+          "value" : {
+            "kind" : "layer-color",
+            "opacity" : 0
+          }
+        },
+        {
+          "appearance" : "tinted",
+          "value" : {
+            "kind" : "neutral",
+            "opacity" : 1.28
+          }
+        }
+      ],
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.2
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
