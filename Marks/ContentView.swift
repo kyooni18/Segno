@@ -96,6 +96,9 @@ struct ContentView: View {
     @ObservedObject var document: MarkdownDocument
     @StateObject private var styleServiceCache = MarkdownStyleServiceCache()
 
+    @AppStorage(MarksPreferences.readOnlyKey)
+    private var isReadOnly = false
+
     @AppStorage(MarkdownStylePreferences.fontNameKey)
     private var fontName = MarkdownStylePreferences.defaultFontName
     @AppStorage(MarkdownStylePreferences.fontSizeKey)
@@ -153,6 +156,8 @@ struct ContentView: View {
         self.document = document
         documentID = String(describing: ObjectIdentifier(document))
     }
+    
+    
 
     var body: some View {
         NativeTextViewWrapper(
@@ -160,7 +165,8 @@ struct ContentView: View {
             configuration: editorConfiguration,
             fontName: fontName,
             fontSize: CGFloat(fontSize),
-            documentId: documentID
+            documentId: documentID,
+            isEditable: !isReadOnly
         )
         // The engine keeps parsed style state in the native editor. Recreate it
         // when persisted appearance or layout controls change so settings apply
@@ -173,6 +179,17 @@ struct ContentView: View {
                 .frame(width: 0, height: 0)
         }
         .padding(CGFloat(outerPadding))
+        .toolbar {
+            ToolbarItem {
+                Picker("Read-Only Mode", selection: $isReadOnly) {
+                    Image(systemName: "character.cursor.ibeam")
+                        .tag(false)
+                    Image(systemName: "book")
+                        .tag(true)
+                }
+                .pickerStyle(.tabs)
+            }
+        }
     }
 
     private var editorConfiguration: MarkdownEditorConfiguration {

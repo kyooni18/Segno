@@ -736,6 +736,35 @@
         }
       }
     },
+    "Read-Only Mode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み取り専用モード"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "읽기 전용 모드"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只读模式"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "唯讀模式"
+          }
+        }
+      }
+    },
     "Search Matches" : {
       "extractionState" : "manual",
       "localizations" : {
