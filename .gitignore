@@ -1,1 +1,12 @@
 .DS_Store
+# Xcode
+xcuserdata/
+*.xcuserstate
+project.xcworkspace/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
