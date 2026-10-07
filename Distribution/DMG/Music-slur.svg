@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="100" viewBox="0 0 260 100">
-  <path d="M 10 78 C 70 -5, 190 -5, 250 78"
-    fill="none" stroke="#6b6464" stroke-width="16" stroke-linecap="round" />
+  <path fill="#6b6464" d="M 10 78
+    C 70 -5, 190 -5, 250 78
+    C 253 82.15, 253 89.7, 250 86
+    C 190 12, 70 12, 10 86
+    C 7 89.7, 7 82.15, 10 78 Z" />
 </svg>

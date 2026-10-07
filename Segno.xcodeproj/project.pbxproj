@@ -57,6 +57,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D887F7F93002548D00BC205E /* Segno */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			name = Segno;
 			path = Marks;
 			sourceTree = "<group>";
 		};
@@ -117,6 +118,7 @@
 				F10000000000000000000004 /* Info.plist */,
 				F10000000000000000000018 /* InfoPlist.strings */,
 			);
+			name = SegnoQuickLook;
 			path = MarksQuickLook;
 			sourceTree = "<group>";
 		};
