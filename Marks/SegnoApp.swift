@@ -89,7 +89,7 @@ struct SegnoApp: App {
         Window("About Segno", id: "about") {
             AboutSegnoView()
         }
-        .defaultSize(width: 480, height: 390)
+        .defaultSize(width: 376, height: 220)
         .windowResizability(.contentSize)
 
     }

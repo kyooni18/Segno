@@ -3,44 +3,30 @@ import SwiftUI
 struct AboutSegnoView: View {
     private var version: String {
         let info = Bundle.main.infoDictionary ?? [:]
-        let version = info["CFBundleShortVersionString"] as? String ?? "—"
-        let build = info["CFBundleVersion"] as? String ?? "—"
-        return "Version \(version) (\(build))"
+        return info["CFBundleShortVersionString"] as? String ?? "—"
+    }
+
+    private var build: String {
+        let info = Bundle.main.infoDictionary ?? [:]
+        return info["CFBundleVersion"] as? String ?? "—"
     }
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 12) {
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
-                .frame(width: 72, height: 72)
-                .accessibilityLabel("Segno app icon")
+                .frame(width: 64, height: 64)
+                .accessibilityLabel(Text("Segno app icon"))
 
             Text("Segno")
-                .font(.system(size: 25, weight: .semibold))
+                .font(.system(size: 24, weight: .semibold))
 
-            Text("A focused place to write, edit, and preview Markdown.")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-
-            Text(version)
+            Text("Version \(version) (\(build))")
                 .font(.callout.monospacedDigit())
                 .foregroundStyle(.secondary)
-
-            Divider()
-
-            HStack(spacing: 18) {
-                Link("Project Website", destination: URL(string: "https://github.com/kyooni18/Marks")!)
-                Link("Support and Feedback", destination: URL(string: "https://github.com/kyooni18/Marks/issues")!)
-            }
-            .font(.callout)
-
-            Text("Segno stores your documents wherever you choose to save them. Sparkle checks Segno’s update feed for signed releases.")
-                .font(.footnote)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
         }
+        .frame(width: 320)
         .padding(28)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .fixedSize(horizontal: true, vertical: true)
     }
 }
