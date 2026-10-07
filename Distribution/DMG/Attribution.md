@@ -4,8 +4,11 @@
 <https://commons.wikimedia.org/wiki/File:Musical_Slur.svg>.
 
 The asset is available under the Creative Commons Attribution-ShareAlike 3.0
-Unported license. The source SVG is included unchanged. The DMG background flips
-the curve vertically, scales it to span the gap above the app icons, and lowers
-its opacity. It contains only the slur curve, with no notes or staff lines.
+Unported license. The downloaded original is included as
+`Music-slur-original.svg`. The DMG artwork retains its engraved curve and
+reshapes the two end joins as integrated cubic Bézier caps, tangent-aligned to
+the arc edges. This rounds the tips continuously without adding separate
+circles. The finished slur sits above the app icons and contains no notes or
+staff lines.
 
 The original SVG and its license terms are available at the source page above.
