@@ -1,7 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="100" viewBox="0 0 260 100">
-  <path fill="#6b6464" d="M 10 78
-    C 70 -25, 190 -25, 250 78
-    C 253.6 84.18, 253.6 100.3, 250 94
-    C 190 -11, 70 -11, 10 94
-    C 6.4 100.3, 6.4 84.18, 10 78 Z" />
+  <path d="M 10 78 C 70 -5, 190 -5, 250 78"
+    fill="none" stroke="#6b6464" stroke-width="16" stroke-linecap="round" />
 </svg>
