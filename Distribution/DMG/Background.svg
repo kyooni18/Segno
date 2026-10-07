@@ -11,5 +11,5 @@
   </defs>
   <rect width="760" height="500" fill="url(#paper)" />
   <rect width="760" height="500" fill="url(#quiet-glow)" />
-  <image href="Music-slur.svg" x="310" y="180" width="140" height="140" opacity="0.48" />
+  <image href="Music-slur.svg" x="253" y="80" width="254" height="89" opacity="0.56" transform="translate(0 249) scale(1 -1)" />
 </svg>
