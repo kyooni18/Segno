@@ -1,12 +1,12 @@
 # Segno release readiness plan
 
-This checklist records the product work needed to present Segno as a finished macOS app. The identity, About window, and Sparkle updater integration are in place; update signing and publishing remain release work.
+This checklist records the product work needed to present Segno as a finished macOS app. Segno 1.2 is a GitHub draft while the release build's signing issue is corrected.
 
 ## Current release candidate
 
-The Segno 1.2 (build 3) source candidate is pushed to `main`. GitHub's existing 1.1 tag and release are for the earlier Marks build, so 1.2 is the next available release number. The 1.2 candidate has not been published.
+Segno 1.2 (build 3) is saved as a GitHub draft. Its ad-hoc signed Apple Silicon DMG and ZIP are not launchable: Gatekeeper rejects the app, and dyld aborts when the app loads Sparkle because the ad-hoc app signature has no team identifier. The generated Sparkle feed was not pushed.
 
-Publishing is currently blocked because this environment has Apple Development certificates but no Developer ID Application identity. Sparkle's `generate_keys --account kyooni18.Segno` found an existing key whose public key matches the value embedded in the app; no new keypair was generated. A Release build with code signing disabled succeeds, but it is only compile validation and is not a distributable build.
+This environment has two Apple Development identities (team IDs `6MB2FXB2U6` and `QDK6VWY8PR`), but the Xcode project is configured for `4P3N4NY7BH`; neither installed identity matches. Sparkle's `generate_keys --account kyooni18.Segno` found the existing key, which can sign the feed. No new keypair was generated.
 
 ## Product polish
 
@@ -14,7 +14,8 @@ Publishing is currently blocked because this environment has Apple Development c
 - [x] Integrate Sparkle for automatic update checks and a native “Check for Updates…” install flow.
 - [x] Create a calm custom DMG window layout with Segno, Applications, and a sourced music slur motif.
 - [x] Generate a local Release-configuration DMG preview with `scripts/build-dmg.sh` and review the mounted Finder layout.
-- [ ] Rebuild the DMG with the final Developer ID identity, notarize and staple it, then verify Gatekeeper launch before publishing.
+- [ ] Rebuild the DMG and ZIP with a consistent signing identity, confirm the app launches, then publish the GitHub release and Sparkle-signed feed.
+- [ ] For a future signed release, build the DMG with a Developer ID identity, notarize and staple it, then verify Gatekeeper launch before publishing.
 - [ ] Publish a notarized, Developer ID signed update archive to GitHub Releases, then regenerate `appcast.xml` from the archive and release notes with Sparkle's `generate_appcast --account kyooni18.Segno` utility and commit the feed.
 - [ ] Back up the existing Sparkle EdDSA private key securely. Sparkle's `generate_keys --account kyooni18.Segno` found the key and printed a public key that matches the app's `SUPublicEDKey`. Never commit or upload the private key.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
@@ -22,7 +23,7 @@ Publishing is currently blocked because this environment has Apple Development c
 
 ## Distribution decisions
 
-- Confirm direct GitHub release distribution; this Sparkle integration uses the repository's raw GitHub `appcast.xml` feed. If the app is moved to the Mac App Store, remove Sparkle and use App Store delivery instead.
+- [x] Use direct GitHub release distribution; this Sparkle integration uses the repository's raw GitHub `appcast.xml` feed. If the app is moved to the Mac App Store, remove Sparkle and use App Store delivery instead.
 - Confirm the publisher name, stable reverse-DNS bundle identifier, website/domain, support address, privacy policy, license, and copyright wording.
 - Review package dependencies and include their required license notices.
 - Decide supported macOS versions and architectures, then verify the deployment target and build settings against that support promise.
