@@ -61,8 +61,6 @@ extension FocusedValues {
 
 @main
 struct SegnoApp: App {
-    @NSApplicationDelegateAdaptor(SegnoApplicationDelegate.self)
-    private var applicationDelegate
     @StateObject private var updater = SegnoUpdater()
 
     var body: some Scene {
@@ -72,7 +70,7 @@ struct SegnoApp: App {
                                    for: .windowToolbar)
                 .toolbarBackgroundVisibility(.visible, for: .windowToolbar)
         }
-        .restorationBehavior(.disabled)
+        .restorationBehavior(.automatic)
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .commands {
             AppInformationCommands(updater: updater)
@@ -108,18 +106,6 @@ private struct AppInformationCommands: Commands {
             Button("Check for Updates…", action: updater.checkForUpdates)
                 .disabled(!updater.canCheckForUpdates)
         }
-    }
-}
-
-private final class SegnoApplicationDelegate: NSObject, NSApplicationDelegate {
-    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
-        guard !hasVisibleWindows else { return false }
-        do {
-            _ = try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
-        } catch {
-            NSApp.presentError(error)
-        }
-        return true
     }
 }
 
