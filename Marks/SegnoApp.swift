@@ -63,7 +63,7 @@ extension FocusedValues {
 struct SegnoApp: App {
     @NSApplicationDelegateAdaptor(SegnoApplicationDelegate.self)
     private var applicationDelegate
-    @StateObject private var releaseChecker = SegnoReleaseChecker()
+    @StateObject private var updater = SegnoUpdater()
 
     var body: some Scene {
         DocumentGroup(newDocument: { MarkdownDocument() }) { file in
@@ -75,7 +75,7 @@ struct SegnoApp: App {
         .restorationBehavior(.disabled)
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .commands {
-            AppInformationCommands()
+            AppInformationCommands(updater: updater)
             ReadOnlyCommands()
             NavigationCommands()
             DocumentCommands()
@@ -92,17 +92,12 @@ struct SegnoApp: App {
         .defaultSize(width: 480, height: 390)
         .windowResizability(.contentSize)
 
-        Window("Software Update", id: "updates") {
-            SegnoUpdatesView()
-                .environmentObject(releaseChecker)
-        }
-        .defaultSize(width: 520, height: 440)
-        .windowResizability(.contentSize)
     }
 }
 
 private struct AppInformationCommands: Commands {
     @Environment(\.openWindow) private var openWindow
+    @ObservedObject var updater: SegnoUpdater
 
     var body: some Commands {
         CommandGroup(replacing: .appInfo) {
@@ -110,9 +105,8 @@ private struct AppInformationCommands: Commands {
                 openWindow(id: "about")
             }
 
-            Button("Check for Updates…") {
-                openWindow(id: "updates")
-            }
+            Button("Check for Updates…", action: updater.checkForUpdates)
+                .disabled(!updater.canCheckForUpdates)
         }
     }
 }

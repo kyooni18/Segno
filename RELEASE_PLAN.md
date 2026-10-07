@@ -1,18 +1,19 @@
 # Segno release readiness plan
 
-This checklist records the product work needed to present Segno as a finished macOS app. The identity, About window, and manual update check are now in place; distribution and signing decisions remain open.
+This checklist records the product work needed to present Segno as a finished macOS app. The identity, About window, and Sparkle updater integration are in place; update signing and publishing remain release work.
 
 ## Product polish
 
 - [x] Add an About window with the Segno description, version/build, project link, and support link.
-- [x] Add a Software Update window and menu action that checks the latest stable GitHub release and opens its release page for notes and download.
-- [ ] Choose distribution. The current updater assumes direct downloads from this repository's GitHub Releases; use the Mac App Store's built-in update flow instead if App Store distribution is selected.
+- [x] Integrate Sparkle for automatic update checks and a native “Check for Updates…” install flow.
+- [ ] Publish a notarized, Developer ID signed update archive to GitHub Releases, then regenerate `appcast.xml` from the archive and release notes with Sparkle's `generate_appcast --account kyooni18.Segno` utility and commit the feed.
+- [ ] Back up the Sparkle EdDSA private key securely before release. It is stored in the login Keychain under `kyooni18.Segno`; the public key is embedded in the app. Never commit or upload the private key.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
 - Finish app icon artwork and validate it at macOS Finder, Dock, and Settings sizes.
 
 ## Distribution decisions
 
-- Confirm direct GitHub release distribution or choose the Mac App Store; this determines update delivery, sandbox capabilities, signing, notarization, and purchase/support flows.
+- Confirm direct GitHub release distribution; this Sparkle integration uses the repository's raw GitHub `appcast.xml` feed. If the app is moved to the Mac App Store, remove Sparkle and use App Store delivery instead.
 - Confirm the publisher name, stable reverse-DNS bundle identifier, website/domain, support address, privacy policy, license, and copyright wording.
 - Review package dependencies and include their required license notices.
 - Decide supported macOS versions and architectures, then verify the deployment target and build settings against that support promise.
@@ -21,6 +22,7 @@ This checklist records the product work needed to present Segno as a finished ma
 
 - Validate a clean Release archive with the intended Developer ID or App Store signing identity and hardened runtime/sandbox settings.
 - For direct distribution, notarize and staple the signed app or disk image; test Gatekeeper launch on a clean Mac account.
+- Verify a real release update end-to-end from an older signed build, including appcast signature, download signature, installation, and relaunch.
 - For the Mac App Store, validate the archive and complete App Store Connect metadata, privacy disclosures, screenshots, and review notes.
 - Smoke-test editing, open/save, document restoration, Quick Look previews, localization, accessibility, and upgrade behavior using a clean install and an upgrade over the previous build.
 - Verify version/build numbers, release notes, crash reporting/support links, and the final downloadable artifact before publishing.
