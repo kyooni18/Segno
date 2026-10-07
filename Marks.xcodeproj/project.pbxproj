@@ -10,10 +10,47 @@
 		D887F8073002553C00BC205E /* MarkdownEngine in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8063002553C00BC205E /* MarkdownEngine */; };
 		D887F8093002553C00BC205E /* MarkdownEngineCodeBlocks in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */; };
 		D887F80B3002553C00BC205E /* MarkdownEngineLatex in Frameworks */ = {isa = PBXBuildFile; productRef = D887F80A3002553C00BC205E /* MarkdownEngineLatex */; };
+		F10000000000000000000005 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000003 /* PreviewViewController.swift */; };
+		F10000000000000000000006 /* MarkdownEngine in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8063002553C00BC205E /* MarkdownEngine */; };
+		F10000000000000000000007 /* MarksQuickLook.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* MarksQuickLook.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F10000000000000000000012 /* MarkdownEngineLatex in Frameworks */ = {isa = PBXBuildFile; productRef = D887F80A3002553C00BC205E /* MarkdownEngineLatex */; };
+		F10000000000000000000013 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000018 /* InfoPlist.strings */; };
+		F10000000000000000000019 /* Marks/MarkdownStyleServiceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000001A /* Marks/MarkdownStyleServiceCache.swift */; };
+		F1000000000000000000001B /* MarkdownEngineCodeBlocks in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F10000000000000000000011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D887F7EF3002548D00BC205E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1000000000000000000000C;
+			remoteInfo = MarksQuickLook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F10000000000000000000008 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				F10000000000000000000007 /* MarksQuickLook.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D887F7F73002548D00BC205E /* Marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000001 /* MarksQuickLook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MarksQuickLook.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000003 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		F10000000000000000000004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10000000000000000000014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F10000000000000000000015 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F10000000000000000000016 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		F10000000000000000000017 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		F1000000000000000000001A /* Marks/MarkdownStyleServiceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marks/MarkdownStyleServiceCache.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +70,14 @@
 				D887F80B3002553C00BC205E /* MarkdownEngineLatex in Frameworks */,
 			);
 		};
+		F1000000000000000000000A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				F10000000000000000000006 /* MarkdownEngine in Frameworks */,
+				F1000000000000000000001B /* MarkdownEngineCodeBlocks in Frameworks */,
+				F10000000000000000000012 /* MarkdownEngineLatex in Frameworks */,
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -40,7 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				D887F7F93002548D00BC205E /* Marks */,
+				F10000000000000000000002 /* MarksQuickLook */,
 				D887F7F83002548D00BC205E /* Products */,
+				D8AC52AF3076499000988D1D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,8 +95,27 @@
 			isa = PBXGroup;
 			children = (
 				D887F7F73002548D00BC205E /* Marks.app */,
+				F10000000000000000000001 /* MarksQuickLook.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D8AC52AF3076499000988D1D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F1000000000000000000001A /* Marks/MarkdownStyleServiceCache.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000002 /* MarksQuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000003 /* PreviewViewController.swift */,
+				F10000000000000000000004 /* Info.plist */,
+				F10000000000000000000018 /* InfoPlist.strings */,
+			);
+			path = MarksQuickLook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,8 +128,12 @@
 				D887F7F33002548D00BC205E /* Sources */,
 				D887F7F43002548D00BC205E /* Frameworks */,
 				D887F7F53002548D00BC205E /* Resources */,
+				F10000000000000000000008 /* Embed App Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				F10000000000000000000010 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				D887F7F93002548D00BC205E /* Marks */,
@@ -78,6 +148,26 @@
 			productReference = D887F7F73002548D00BC205E /* Marks.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1000000000000000000000C /* MarksQuickLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1000000000000000000000F /* Build configuration list for PBXNativeTarget "MarksQuickLook" */;
+			buildPhases = (
+				F10000000000000000000009 /* Sources */,
+				F1000000000000000000000A /* Frameworks */,
+				F1000000000000000000000B /* Resources */,
+			);
+			buildRules = (
+			);
+			name = MarksQuickLook;
+			packageProductDependencies = (
+				D887F8063002553C00BC205E /* MarkdownEngine */,
+				D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */,
+				D887F80A3002553C00BC205E /* MarkdownEngineLatex */,
+			);
+			productName = MarksQuickLook;
+			productReference = F10000000000000000000001 /* MarksQuickLook.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -89,6 +179,9 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					D887F7F63002548D00BC205E = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					F1000000000000000000000C = {
 						CreatedOnToolsVersion = 27.0;
 					};
 				};
@@ -115,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				D887F7F63002548D00BC205E /* Marks */,
+				F1000000000000000000000C /* MarksQuickLook */,
 			);
 		};
 /* End PBXProject section */
@@ -125,6 +219,12 @@
 			files = (
 			);
 		};
+		F1000000000000000000000B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				F10000000000000000000013 /* InfoPlist.strings in Resources */,
+			);
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -133,7 +233,36 @@
 			files = (
 			);
 		};
+		F10000000000000000000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				F10000000000000000000005 /* PreviewViewController.swift in Sources */,
+				F10000000000000000000019 /* Marks/MarkdownStyleServiceCache.swift in Sources */,
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F10000000000000000000010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1000000000000000000000C /* MarksQuickLook */;
+			targetProxy = F10000000000000000000011 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F10000000000000000000018 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F10000000000000000000014 /* ko */,
+				F10000000000000000000015 /* ja */,
+				F10000000000000000000016 /* zh-Hans */,
+				F10000000000000000000017 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D887F8003002548F00BC205E /* Debug configuration for PBXProject "Marks" */ = {
@@ -264,7 +393,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -277,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -298,7 +427,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -311,11 +440,65 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F1000000000000000000000D /* Debug configuration for PBXNativeTarget "MarksQuickLook" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 4P3N4NY7BH;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarksQuickLook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks.MarkdownPreview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F1000000000000000000000E /* Release configuration for PBXNativeTarget "MarksQuickLook" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 4P3N4NY7BH;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MarksQuickLook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks.MarkdownPreview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -340,6 +523,14 @@
 			buildConfigurations = (
 				D887F8033002548F00BC205E /* Debug configuration for PBXNativeTarget "Marks" */,
 				D887F8043002548F00BC205E /* Release configuration for PBXNativeTarget "Marks" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		F1000000000000000000000F /* Build configuration list for PBXNativeTarget "MarksQuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1000000000000000000000D /* Debug configuration for PBXNativeTarget "MarksQuickLook" */,
+				F1000000000000000000000E /* Release configuration for PBXNativeTarget "MarksQuickLook" */,
 			);
 			defaultConfigurationName = Release;
 		};
