@@ -6,6 +6,8 @@ This checklist records the product work needed to present Segno as a finished ma
 
 - [x] Add an About window with the Segno description, version/build, project link, and support link.
 - [x] Integrate Sparkle for automatic update checks and a native “Check for Updates…” install flow.
+- [x] Create a calm custom DMG window layout with Segno, Applications, and a sourced music slur motif.
+- [ ] Generate the DMG from the signed Release app using `scripts/build-dmg.sh` and review the mounted Finder window before publishing.
 - [ ] Publish a notarized, Developer ID signed update archive to GitHub Releases, then regenerate `appcast.xml` from the archive and release notes with Sparkle's `generate_appcast --account kyooni18.Segno` utility and commit the feed.
 - [ ] Back up the Sparkle EdDSA private key securely before release. It is stored in the login Keychain under `kyooni18.Segno`; the public key is embedded in the app. Never commit or upload the private key.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
