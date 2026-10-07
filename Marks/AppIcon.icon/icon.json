@@ -1,54 +1,113 @@
 {
-  "fill" : {
-    "solid" : "display-p3:1.00000,0.97747,0.98126,1.00000"
-  },
+  "features" : [
+    "refractivity",
+    "specular-location"
+  ],
+  "fill-specializations" : [
+    {
+      "value" : {
+        "solid" : "display-p3:1.00000,0.98366,0.95632,1.00000"
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "automatic-gradient" : "display-p3:0.12298,0.14099,0.15638,1.00000"
+      }
+    }
+  ],
   "groups" : [
     {
+      "blur-material-specializations" : [
+        {
+          "value" : 0.16
+        },
+        {
+          "appearance" : "tinted",
+          "value" : 1
+        }
+      ],
       "layers" : [
         {
-          "glass" : true,
-          "image-name" : "Codex 이미지 2026년 8월 18일 오후 06_50_31.png",
-          "name" : "Codex 이미지 2026년 8월 18일 오후 06_50_31",
+          "fill-specializations" : [
+            {
+              "value" : {
+                "automatic-gradient" : "display-p3:0.19947,0.22702,0.25150,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "automatic-gradient" : "display-p3:0.67501,0.67286,0.66641,1.00000"
+              }
+            }
+          ],
+          "image-name" : "ChatGPT 이미지 2026년 10월 8일 오전 01_32_27.png",
+          "name" : "ChatGPT 이미지 2026년 10월 8일 오전 01_32_27",
           "position" : {
-            "scale" : 0.73,
+            "scale" : 0.76,
             "translation-in-points" : [
-              -27.068375755774696,
-              -25.549999999999955
+              -1,
+              12
             ]
           }
         }
       ],
-      "refractivity" : {
-        "depth" : 0,
-        "enabled" : false,
-        "strength" : 0.5
-      },
+      "refractivity-specializations" : [
+        {
+          "value" : {
+            "depth" : 1,
+            "enabled" : true,
+            "strength" : -0.1168359375
+          }
+        },
+        {
+          "appearance" : "tinted",
+          "value" : {
+            "depth" : 0,
+            "enabled" : true,
+            "strength" : 0.0888671875
+          }
+        }
+      ],
       "shadow-specializations" : [
         {
           "value" : {
-            "kind" : "neutral",
-            "opacity" : 1.28
+            "kind" : "layer-color",
+            "opacity" : 1
           }
         },
         {
           "appearance" : "dark",
           "value" : {
-            "kind" : "layer-color",
-            "opacity" : 0
+            "kind" : "neutral",
+            "opacity" : 0.96
           }
         },
         {
           "appearance" : "tinted",
           "value" : {
             "kind" : "neutral",
-            "opacity" : 1.28
+            "opacity" : 2.92
           }
         }
       ],
-      "translucency" : {
-        "enabled" : false,
-        "value" : 0.2
-      }
+      "specular" : "inside",
+      "translucency-specializations" : [
+        {
+          "value" : {
+            "enabled" : true,
+            "value" : 0.26
+          }
+        },
+        {
+          "appearance" : "tinted",
+          "value" : {
+            "enabled" : true,
+            "value" : 1
+          }
+        }
+      ]
     }
   ],
   "supported-platforms" : {

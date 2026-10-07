@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var editorScrollOffsets = MarkdownEditorScrollOffsetStore()
     @State private var documentMetrics: DocumentMetrics
     @State private var documentHeadings: [MarkdownOutline.Heading]
+    @State private var restoredTableOfContentsWidth: CGFloat
 
     @State private var isSearchPresented = false
     @State private var searchText = ""
@@ -86,6 +87,7 @@ struct ContentView: View {
         documentID = String(describing: ObjectIdentifier(document))
         _documentMetrics = State(initialValue: DocumentMetrics(text: document.text))
         _documentHeadings = State(initialValue: MarkdownOutline.headings(in: document.text))
+        _restoredTableOfContentsWidth = State(initialValue: TableOfContentsSidebarWidth.restoredWidth())
     }
     
     
@@ -130,11 +132,16 @@ struct ContentView: View {
         .focusedSceneValue(\.documentFileURL, fileURL)
         .focusedSceneValue(\.editorFontSize, $fontSize)
         .inspector(isPresented: $isTableOfContentsPresented) {
-            TableOfContentsView(headings: documentHeadings) { heading in
+            TableOfContentsInspector(headings: documentHeadings) { heading in
                 navigateToHeading(heading)
             }
-            .inspectorColumnWidth(min: 190, ideal: 250, max: 360)
+            .inspectorColumnWidth(
+                min: TableOfContentsSidebarWidth.minimum,
+                ideal: restoredTableOfContentsWidth,
+                max: TableOfContentsSidebarWidth.maximum
+            )
         }
+        .background(WindowFrameRestorationBridge())
         .toolbar {
             ToolbarItemGroup() {
                 HStack(spacing: -1) {

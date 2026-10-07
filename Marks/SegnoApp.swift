@@ -1,9 +1,36 @@
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 enum SegnoPreferences {
     static let readOnlyKey = "editor.readOnly"
     static let tableOfContentsPresentedKey = "navigation.tableOfContentsPresented"
+}
+
+struct WindowFrameRestorationBridge: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSView {
+        let view = WindowFrameRestorationView()
+        view.isHidden = true
+        return view
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
+private final class WindowFrameRestorationView: NSView {
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        guard let window else { return }
+
+        let autosaveName = NSWindow.FrameAutosaveName("Segno.DocumentWindow")
+        guard window.frameAutosaveName != autosaveName else { return }
+
+        DispatchQueue.main.async { [weak window] in
+            guard let window else { return }
+            _ = window.setFrameUsingName(autosaveName)
+            _ = window.setFrameAutosaveName(autosaveName)
+        }
+    }
 }
 
 private struct DocumentSearchPresentedKey: FocusedValueKey {
@@ -70,6 +97,7 @@ struct SegnoApp: App {
                                    for: .windowToolbar)
                 .toolbarBackgroundVisibility(.visible, for: .windowToolbar)
         }
+        .defaultLaunchBehavior(.suppressed)
         .restorationBehavior(.automatic)
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .commands {
@@ -79,6 +107,14 @@ struct SegnoApp: App {
             DocumentCommands()
             EditorSizingCommands()
         }
+
+        Window("Segno", id: "document-launch") {
+            DocumentLaunchView()
+        }
+        .defaultSize(width: 1, height: 1)
+        .windowResizability(.contentSize)
+        .defaultLaunchBehavior(.presented)
+        .restorationBehavior(.disabled)
 
         Settings {
             MarkdownStyleSettingsView()
@@ -90,6 +126,28 @@ struct SegnoApp: App {
         .defaultSize(width: 376, height: 220)
         .windowResizability(.contentSize)
 
+    }
+}
+
+private struct DocumentLaunchView: View {
+    @Environment(\.newDocument) private var newDocument
+    @Environment(\.dismiss) private var dismiss
+    @State private var didCreateDocument = false
+
+    var body: some View {
+        Color.clear
+            .frame(width: 1, height: 1)
+            .onAppear {
+                guard !didCreateDocument else { return }
+                didCreateDocument = true
+
+                DispatchQueue.main.async {
+                    newDocument(contentType: .markdown)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        dismiss()
+                    }
+                }
+            }
     }
 }
 

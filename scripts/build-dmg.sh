@@ -40,10 +40,10 @@ create-dmg \
   --volname "Segno" \
   --background "$BACKGROUND_PNG" \
   --window-pos 200 120 \
-  --window-size 970 715 \
+  --window-size 760 500 \
   --icon-size 128 \
-  --icon "Segno.app" 245 370 \
-  --app-drop-link 725 370 \
+  --icon "Segno.app" 190 260 \
+  --app-drop-link 570 260 \
   --hide-extension "Segno.app" \
   "$OUTPUT_PATH" \
   "$STAGING_DIR"
