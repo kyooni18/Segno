@@ -7,8 +7,8 @@ The asset is available under the Creative Commons Attribution-ShareAlike 3.0
 Unported license. The downloaded original is included as
 `Music-slur-original.svg`. The DMG artwork retains its engraved curve and
 reshapes the two end joins as integrated cubic Bézier caps, tangent-aligned to
-the arc edges. This rounds the tips continuously without adding separate
-circles. The finished slur sits above the app icons and contains no notes or
-staff lines.
+the arc edges. The softened terminals remain part of the continuous outline;
+they are not separate circles. The finished slur sits above the app icons and
+contains no notes or staff lines.
 
 The original SVG and its license terms are available at the source page above.
