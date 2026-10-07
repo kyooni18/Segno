@@ -2,6 +2,12 @@
 
 This checklist records the product work needed to present Segno as a finished macOS app. The identity, About window, and Sparkle updater integration are in place; update signing and publishing remain release work.
 
+## Current release candidate
+
+The Segno 1.2 (build 3) source candidate is pushed to `main`. GitHub's existing 1.1 tag and release are for the earlier Marks build, so 1.2 is the next available release number. The 1.2 candidate has not been published.
+
+Publishing is currently blocked because this environment has Apple Development certificates but no Developer ID Application identity, and the expected Sparkle private key was not found in the login Keychain. A Release build with code signing disabled succeeds, but it is only compile validation and is not a distributable build.
+
 ## Product polish
 
 - [x] Add an About window with the Segno description, version/build, project link, and support link.
@@ -10,7 +16,7 @@ This checklist records the product work needed to present Segno as a finished ma
 - [x] Generate a local Release-configuration DMG preview with `scripts/build-dmg.sh` and review the mounted Finder layout.
 - [ ] Rebuild the DMG with the final Developer ID identity, notarize and staple it, then verify Gatekeeper launch before publishing.
 - [ ] Publish a notarized, Developer ID signed update archive to GitHub Releases, then regenerate `appcast.xml` from the archive and release notes with Sparkle's `generate_appcast --account kyooni18.Segno` utility and commit the feed.
-- [ ] Back up the Sparkle EdDSA private key securely before release. It is stored in the login Keychain under `kyooni18.Segno`; the public key is embedded in the app. Never commit or upload the private key.
+- [ ] Confirm access to the Sparkle EdDSA private key; the expected login Keychain service is `kyooni18.Segno`, but lookup during 1.2 preparation found no matching item. Back it up securely. Never commit or upload the private key.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
 - Finish app icon artwork and validate it at macOS Finder, Dock, and Settings sizes.
 
