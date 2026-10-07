@@ -5,13 +5,13 @@ import MarkdownEngineCodeBlocks
 
 final class MarkdownStyleServiceCache: ObservableObject {
     private var cacheKey = ""
-    private var cachedHighlighter = MarksSyntaxHighlighter()
+    private var cachedHighlighter = SegnoSyntaxHighlighter()
 
     func syntaxHighlighter(
         codeFontName: String,
         lightBackground: NSColor,
         darkBackground: NSColor
-    ) -> MarksSyntaxHighlighter {
+    ) -> SegnoSyntaxHighlighter {
         let newKey = [
             codeFontName,
             lightBackground.markdownCacheKey,
@@ -20,7 +20,7 @@ final class MarkdownStyleServiceCache: ObservableObject {
 
         if newKey != cacheKey {
             cacheKey = newKey
-            cachedHighlighter = MarksSyntaxHighlighter(
+            cachedHighlighter = SegnoSyntaxHighlighter(
                 lightBackground: lightBackground,
                 darkBackground: darkBackground,
                 preferredFontNames: [codeFontName, "SF Mono", "Menlo"]
@@ -31,7 +31,7 @@ final class MarkdownStyleServiceCache: ObservableObject {
     }
 }
 
-final class MarksSyntaxHighlighter: SyntaxHighlighter, @unchecked Sendable {
+final class SegnoSyntaxHighlighter: SyntaxHighlighter, @unchecked Sendable {
     private let highlighter: HighlighterSwiftBridge
 
     init(

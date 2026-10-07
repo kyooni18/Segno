@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D887F7F63002548D00BC205E"
-               BuildableName = "Marks.app"
+               BuildableName = "Segno.app"
                ReferencedContainer = "container:Marks.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D887F7F63002548D00BC205E"
-            BuildableName = "Marks.app"
+            BuildableName = "Segno.app"
             ReferencedContainer = "container:Marks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D887F7F63002548D00BC205E"
-            BuildableName = "Marks.app"
+            BuildableName = "Segno.app"
             ReferencedContainer = "container:Marks.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

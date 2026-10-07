@@ -1,4 +1,4 @@
-# Marks Icon Composer artwork
+# Segno Icon Composer artwork
 
 The `Layers` folder contains 1024 × 1024 SVG artwork named in back-to-front order for Icon Composer.
 

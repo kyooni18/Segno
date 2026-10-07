@@ -53,7 +53,7 @@ private struct MarkdownQuickLookView: View {
             configuration: {
                 var configuration = MarkdownEditorConfiguration.default
                 configuration.services.latex = SwiftMathBridge()
-                configuration.services.syntaxHighlighter = MarksSyntaxHighlighter()
+                configuration.services.syntaxHighlighter = SegnoSyntaxHighlighter()
                 configuration.extensions = [HighlightExtension(), StrikethroughExtension()]
                 configuration.textInsets = TextInsets(horizontal: 16, vertical: 16)
                 configuration.headings.topSpacingEm = [0.30, 0.26, 0.22, 0.18, 0.14, 0.10]

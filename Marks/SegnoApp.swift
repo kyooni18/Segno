@@ -1,7 +1,7 @@
 import AppKit
 import SwiftUI
 
-enum MarksPreferences {
+enum SegnoPreferences {
     static let readOnlyKey = "editor.readOnly"
     static let tableOfContentsPresentedKey = "navigation.tableOfContentsPresented"
 }
@@ -60,9 +60,10 @@ extension FocusedValues {
 }
 
 @main
-struct MarksApp: App {
-    @NSApplicationDelegateAdaptor(MarksApplicationDelegate.self)
+struct SegnoApp: App {
+    @NSApplicationDelegateAdaptor(SegnoApplicationDelegate.self)
     private var applicationDelegate
+    @StateObject private var releaseChecker = SegnoReleaseChecker()
 
     var body: some Scene {
         DocumentGroup(newDocument: { MarkdownDocument() }) { file in
@@ -74,6 +75,7 @@ struct MarksApp: App {
         .restorationBehavior(.disabled)
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .commands {
+            AppInformationCommands()
             ReadOnlyCommands()
             NavigationCommands()
             DocumentCommands()
@@ -83,10 +85,39 @@ struct MarksApp: App {
         Settings {
             MarkdownStyleSettingsView()
         }
+
+        Window("About Segno", id: "about") {
+            AboutSegnoView()
+        }
+        .defaultSize(width: 480, height: 390)
+        .windowResizability(.contentSize)
+
+        Window("Software Update", id: "updates") {
+            SegnoUpdatesView()
+                .environmentObject(releaseChecker)
+        }
+        .defaultSize(width: 520, height: 440)
+        .windowResizability(.contentSize)
     }
 }
 
-private final class MarksApplicationDelegate: NSObject, NSApplicationDelegate {
+private struct AppInformationCommands: Commands {
+    @Environment(\.openWindow) private var openWindow
+
+    var body: some Commands {
+        CommandGroup(replacing: .appInfo) {
+            Button("About Segno") {
+                openWindow(id: "about")
+            }
+
+            Button("Check for Updates…") {
+                openWindow(id: "updates")
+            }
+        }
+    }
+}
+
+private final class SegnoApplicationDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
         guard !hasVisibleWindows else { return false }
         do {
@@ -201,7 +232,7 @@ private struct EditorSizingCommands: Commands {
 }
 
 private struct ReadOnlyCommands: Commands {
-    @AppStorage(MarksPreferences.readOnlyKey)
+    @AppStorage(SegnoPreferences.readOnlyKey)
     private var isReadOnly = false
 
     var body: some Commands {

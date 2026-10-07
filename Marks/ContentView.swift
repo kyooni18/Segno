@@ -20,10 +20,10 @@ struct ContentView: View {
     @State private var searchMatchCount = 0
     @State private var searchMatchIndex = 0
     @State private var searchFocusRequest = 0
-    @AppStorage(MarksPreferences.tableOfContentsPresentedKey)
+    @AppStorage(SegnoPreferences.tableOfContentsPresentedKey)
     private var isTableOfContentsPresented = true
 
-    @AppStorage(MarksPreferences.readOnlyKey)
+    @AppStorage(SegnoPreferences.readOnlyKey)
     private var isReadOnly = false
 
     @AppStorage(MarkdownStylePreferences.fontNameKey)
@@ -293,23 +293,23 @@ struct ContentView: View {
     }
 
     private var findQueryNotification: Notification.Name {
-        Notification.Name("Marks.FindQuery.\(documentID)")
+        Notification.Name("Segno.FindQuery.\(documentID)")
     }
 
     private var findResultsNotification: Notification.Name {
-        Notification.Name("Marks.FindResults.\(documentID)")
+        Notification.Name("Segno.FindResults.\(documentID)")
     }
 
     private var findClearNotification: Notification.Name {
-        Notification.Name("Marks.FindClear.\(documentID)")
+        Notification.Name("Segno.FindClear.\(documentID)")
     }
 
     private var replaceCurrentNotification: Notification.Name {
-        Notification.Name("Marks.ReplaceCurrent.\(documentID)")
+        Notification.Name("Segno.ReplaceCurrent.\(documentID)")
     }
 
     private var replaceAllNotification: Notification.Name {
-        Notification.Name("Marks.ReplaceAll.\(documentID)")
+        Notification.Name("Segno.ReplaceAll.\(documentID)")
     }
 
     private var searchStatusText: String {

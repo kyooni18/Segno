@@ -12,7 +12,7 @@
 		D887F80B3002553C00BC205E /* MarkdownEngineLatex in Frameworks */ = {isa = PBXBuildFile; productRef = D887F80A3002553C00BC205E /* MarkdownEngineLatex */; };
 		F10000000000000000000005 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000003 /* PreviewViewController.swift */; };
 		F10000000000000000000006 /* MarkdownEngine in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8063002553C00BC205E /* MarkdownEngine */; };
-		F10000000000000000000007 /* MarksQuickLook.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* MarksQuickLook.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F10000000000000000000007 /* SegnoQuickLook.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* SegnoQuickLook.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F10000000000000000000012 /* MarkdownEngineLatex in Frameworks */ = {isa = PBXBuildFile; productRef = D887F80A3002553C00BC205E /* MarkdownEngineLatex */; };
 		F10000000000000000000013 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000018 /* InfoPlist.strings */; };
 		F10000000000000000000019 /* Marks/MarkdownStyleServiceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000001A /* Marks/MarkdownStyleServiceCache.swift */; };
@@ -25,7 +25,7 @@
 			containerPortal = D887F7EF3002548D00BC205E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F1000000000000000000000C;
-			remoteInfo = MarksQuickLook;
+			remoteInfo = SegnoQuickLook;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -35,15 +35,15 @@
 			dstPath = "";
 			dstSubfolder = PlugIns;
 			files = (
-				F10000000000000000000007 /* MarksQuickLook.appex in Embed App Extensions */,
+				F10000000000000000000007 /* SegnoQuickLook.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D887F7F73002548D00BC205E /* Marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F10000000000000000000001 /* MarksQuickLook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MarksQuickLook.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D887F7F73002548D00BC205E /* Segno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000001 /* SegnoQuickLook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SegnoQuickLook.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10000000000000000000003 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		F10000000000000000000004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F10000000000000000000014 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D887F7F93002548D00BC205E /* Marks */ = {
+		D887F7F93002548D00BC205E /* Segno */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Marks;
 			sourceTree = "<group>";
@@ -84,8 +84,8 @@
 		D887F7EE3002548D00BC205E = {
 			isa = PBXGroup;
 			children = (
-				D887F7F93002548D00BC205E /* Marks */,
-				F10000000000000000000002 /* MarksQuickLook */,
+				D887F7F93002548D00BC205E /* Segno */,
+				F10000000000000000000002 /* SegnoQuickLook */,
 				D887F7F83002548D00BC205E /* Products */,
 				D8AC52AF3076499000988D1D /* Recovered References */,
 			);
@@ -94,8 +94,8 @@
 		D887F7F83002548D00BC205E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D887F7F73002548D00BC205E /* Marks.app */,
-				F10000000000000000000001 /* MarksQuickLook.appex */,
+				D887F7F73002548D00BC205E /* Segno.app */,
+				F10000000000000000000001 /* SegnoQuickLook.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		F10000000000000000000002 /* MarksQuickLook */ = {
+		F10000000000000000000002 /* SegnoQuickLook */ = {
 			isa = PBXGroup;
 			children = (
 				F10000000000000000000003 /* PreviewViewController.swift */,
@@ -121,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D887F7F63002548D00BC205E /* Marks */ = {
+		D887F7F63002548D00BC205E /* Segno */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D887F8023002548F00BC205E /* Build configuration list for PBXNativeTarget "Marks" */;
+			buildConfigurationList = D887F8023002548F00BC205E /* Build configuration list for PBXNativeTarget "Segno" */;
 			buildPhases = (
 				D887F7F33002548D00BC205E /* Sources */,
 				D887F7F43002548D00BC205E /* Frameworks */,
@@ -136,21 +136,21 @@
 				F10000000000000000000010 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D887F7F93002548D00BC205E /* Marks */,
+				D887F7F93002548D00BC205E /* Segno */,
 			);
-			name = Marks;
+			name = Segno;
 			packageProductDependencies = (
 				D887F8063002553C00BC205E /* MarkdownEngine */,
 				D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */,
 				D887F80A3002553C00BC205E /* MarkdownEngineLatex */,
 			);
-			productName = Marks;
-			productReference = D887F7F73002548D00BC205E /* Marks.app */;
+			productName = Segno;
+			productReference = D887F7F73002548D00BC205E /* Segno.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F1000000000000000000000C /* MarksQuickLook */ = {
+		F1000000000000000000000C /* SegnoQuickLook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1000000000000000000000F /* Build configuration list for PBXNativeTarget "MarksQuickLook" */;
+			buildConfigurationList = F1000000000000000000000F /* Build configuration list for PBXNativeTarget "SegnoQuickLook" */;
 			buildPhases = (
 				F10000000000000000000009 /* Sources */,
 				F1000000000000000000000A /* Frameworks */,
@@ -158,14 +158,14 @@
 			);
 			buildRules = (
 			);
-			name = MarksQuickLook;
+			name = SegnoQuickLook;
 			packageProductDependencies = (
 				D887F8063002553C00BC205E /* MarkdownEngine */,
 				D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */,
 				D887F80A3002553C00BC205E /* MarkdownEngineLatex */,
 			);
-			productName = MarksQuickLook;
-			productReference = F10000000000000000000001 /* MarksQuickLook.appex */;
+			productName = SegnoQuickLook;
+			productReference = F10000000000000000000001 /* SegnoQuickLook.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D887F7F23002548D00BC205E /* Build configuration list for PBXProject "Marks" */;
+			buildConfigurationList = D887F7F23002548D00BC205E /* Build configuration list for PBXProject "Segno" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D887F7F63002548D00BC205E /* Marks */,
-				F1000000000000000000000C /* MarksQuickLook */,
+				D887F7F63002548D00BC205E /* Segno */,
+				F1000000000000000000000C /* SegnoQuickLook */,
 			);
 		};
 /* End PBXProject section */
@@ -245,7 +245,7 @@
 /* Begin PBXTargetDependency section */
 		F10000000000000000000010 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F1000000000000000000000C /* MarksQuickLook */;
+			target = F1000000000000000000000C /* SegnoQuickLook */;
 			targetProxy = F10000000000000000000011 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -265,7 +265,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D887F8003002548F00BC205E /* Debug configuration for PBXProject "Marks" */ = {
+		D887F8003002548F00BC205E /* Debug configuration for PBXProject "Segno" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -329,7 +329,7 @@
 			};
 			name = Debug;
 		};
-		D887F8013002548F00BC205E /* Release configuration for PBXProject "Marks" */ = {
+		D887F8013002548F00BC205E /* Release configuration for PBXProject "Segno" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -385,13 +385,14 @@
 			};
 			name = Release;
 		};
-		D887F8033002548F00BC205E /* Debug configuration for PBXNativeTarget "Marks" */ = {
+		D887F8033002548F00BC205E /* Debug configuration for PBXNativeTarget "Segno" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Segno.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
@@ -400,6 +401,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Segno;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,7 +409,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Segno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -419,13 +421,14 @@
 			};
 			name = Debug;
 		};
-		D887F8043002548F00BC205E /* Release configuration for PBXNativeTarget "Marks" */ = {
+		D887F8043002548F00BC205E /* Release configuration for PBXNativeTarget "Segno" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Segno.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
@@ -434,6 +437,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Segno;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -441,7 +445,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Segno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -453,7 +457,7 @@
 			};
 			name = Release;
 		};
-		F1000000000000000000000D /* Debug configuration for PBXNativeTarget "MarksQuickLook" */ = {
+		F1000000000000000000000D /* Debug configuration for PBXNativeTarget "SegnoQuickLook" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -469,7 +473,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks.MarkdownPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Segno.MarkdownPreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -480,7 +484,7 @@
 			};
 			name = Debug;
 		};
-		F1000000000000000000000E /* Release configuration for PBXNativeTarget "MarksQuickLook" */ = {
+		F1000000000000000000000E /* Release configuration for PBXNativeTarget "SegnoQuickLook" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -496,7 +500,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Marks.MarkdownPreview;
+				PRODUCT_BUNDLE_IDENTIFIER = kyooni18.Segno.MarkdownPreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -510,27 +514,27 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D887F7F23002548D00BC205E /* Build configuration list for PBXProject "Marks" */ = {
+		D887F7F23002548D00BC205E /* Build configuration list for PBXProject "Segno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D887F8003002548F00BC205E /* Debug configuration for PBXProject "Marks" */,
-				D887F8013002548F00BC205E /* Release configuration for PBXProject "Marks" */,
+				D887F8003002548F00BC205E /* Debug configuration for PBXProject "Segno" */,
+				D887F8013002548F00BC205E /* Release configuration for PBXProject "Segno" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		D887F8023002548F00BC205E /* Build configuration list for PBXNativeTarget "Marks" */ = {
+		D887F8023002548F00BC205E /* Build configuration list for PBXNativeTarget "Segno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D887F8033002548F00BC205E /* Debug configuration for PBXNativeTarget "Marks" */,
-				D887F8043002548F00BC205E /* Release configuration for PBXNativeTarget "Marks" */,
+				D887F8033002548F00BC205E /* Debug configuration for PBXNativeTarget "Segno" */,
+				D887F8043002548F00BC205E /* Release configuration for PBXNativeTarget "Segno" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		F1000000000000000000000F /* Build configuration list for PBXNativeTarget "MarksQuickLook" */ = {
+		F1000000000000000000000F /* Build configuration list for PBXNativeTarget "SegnoQuickLook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F1000000000000000000000D /* Debug configuration for PBXNativeTarget "MarksQuickLook" */,
-				F1000000000000000000000E /* Release configuration for PBXNativeTarget "MarksQuickLook" */,
+				F1000000000000000000000D /* Debug configuration for PBXNativeTarget "SegnoQuickLook" */,
+				F1000000000000000000000E /* Release configuration for PBXNativeTarget "SegnoQuickLook" */,
 			);
 			defaultConfigurationName = Release;
 		};

@@ -1,4 +1,4 @@
-# Marks
+# Segno
 
-Markdown, WYSIWYG, plain textfield.
-That's all.
+Segno is a macOS Markdown editor with a focused writing surface, live preview,
+and Quick Look support.
