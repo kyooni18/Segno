@@ -1,10 +1,10 @@
 # Segno release readiness plan
 
-This checklist records the product work needed to present Segno as a finished macOS app. Segno 1.2 is a GitHub draft while its corrected assets are prepared for publishing.
+This checklist records the product work needed to present Segno as a finished macOS app.
 
 ## Current release candidate
 
-Segno 1.2 (build 4) removes Sparkle and its feed. The local Release build launches, the ZIP bundle passes code-signature verification, and the DMG checksum is valid. The app uses an ad-hoc signature with hardened runtime, but is not notarized; macOS may require users to approve it on first launch. Updates are distributed manually through GitHub Releases.
+Segno 1.2 (build 4) is published on GitHub Releases. It removes Sparkle and its feed. The local Release build launches, the ZIP bundle passes code-signature verification, and the DMG checksum is valid. The app uses an ad-hoc signature with hardened runtime, but is not notarized; macOS may require users to approve it on first launch. Updates are distributed manually through GitHub Releases.
 
 ## Product polish
 
@@ -12,7 +12,7 @@ Segno 1.2 (build 4) removes Sparkle and its feed. The local Release build launch
 - [x] Create a calm custom DMG window layout with Segno, Applications, and a sourced music slur motif.
 - [x] Generate a local Release-configuration DMG preview with `scripts/build-dmg.sh` and review the mounted Finder layout.
 - [x] Remove Sparkle and build a launchable DMG and ZIP; distribute updates manually.
-- [ ] Replace the broken draft assets and publish the GitHub release.
+- [x] Replace the broken draft assets and publish the GitHub release.
 - [ ] For a future signed release, build the DMG with a Developer ID identity, notarize and staple it, then verify Gatekeeper launch before publishing.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
 - Finish app icon artwork and validate it at macOS Finder, Dock, and Settings sizes.
