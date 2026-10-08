@@ -1,17 +1,18 @@
 # Segno release readiness plan
 
-This checklist records the product work needed to present Segno as a finished macOS app. Segno 1.2 is a GitHub draft while the app is rebuilt without Sparkle.
+This checklist records the product work needed to present Segno as a finished macOS app. Segno 1.2 is a GitHub draft while its corrected assets are prepared for publishing.
 
 ## Current release candidate
 
-The existing GitHub draft contains Segno 1.2 (build 3), an ad-hoc signed app that fails to launch because Sparkle's embedded framework cannot pass dyld library validation without a Team ID. Build 4 removes Sparkle and its feed. The app remains ad-hoc signed and not notarized, so macOS may require users to approve it on first launch.
+Segno 1.2 (build 4) removes Sparkle and its feed. The local Release build launches, the ZIP bundle passes code-signature verification, and the DMG checksum is valid. The app uses an ad-hoc signature with hardened runtime, but is not notarized; macOS may require users to approve it on first launch. Updates are distributed manually through GitHub Releases.
 
 ## Product polish
 
 - [x] Add an About window with the Segno description, version/build, project link, and support link.
 - [x] Create a calm custom DMG window layout with Segno, Applications, and a sourced music slur motif.
 - [x] Generate a local Release-configuration DMG preview with `scripts/build-dmg.sh` and review the mounted Finder layout.
-- [ ] Rebuild the DMG and ZIP without Sparkle, confirm the app launches, then replace the draft assets and publish the GitHub release.
+- [x] Remove Sparkle and build a launchable DMG and ZIP; distribute updates manually.
+- [ ] Replace the broken draft assets and publish the GitHub release.
 - [ ] For a future signed release, build the DMG with a Developer ID identity, notarize and staple it, then verify Gatekeeper launch before publishing.
 - Provide user-facing release notes and a support/privacy page, and document what data Segno stores or sends.
 - Finish app icon artwork and validate it at macOS Finder, Dock, and Settings sizes.
