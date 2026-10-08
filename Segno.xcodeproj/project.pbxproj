@@ -17,7 +17,6 @@
 		F10000000000000000000013 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000018 /* InfoPlist.strings */; };
 		F10000000000000000000019 /* Marks/MarkdownStyleServiceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000001A /* Marks/MarkdownStyleServiceCache.swift */; };
 		F1000000000000000000001B /* MarkdownEngineCodeBlocks in Frameworks */ = {isa = PBXBuildFile; productRef = D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */; };
-		F10000000000000000000020 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F10000000000000000000021 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +66,6 @@
 		D887F7F43002548D00BC205E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
-				F10000000000000000000020 /* Sparkle in Frameworks */,
 				D887F8093002553C00BC205E /* MarkdownEngineCodeBlocks in Frameworks */,
 				D887F8073002553C00BC205E /* MarkdownEngine in Frameworks */,
 				D887F80B3002553C00BC205E /* MarkdownEngineLatex in Frameworks */,
@@ -144,7 +142,6 @@
 			);
 			name = Segno;
 			packageProductDependencies = (
-				F10000000000000000000021 /* Sparkle */,
 				D887F8063002553C00BC205E /* MarkdownEngine */,
 				D887F8083002553C00BC205E /* MarkdownEngineCodeBlocks */,
 				D887F80A3002553C00BC205E /* MarkdownEngineLatex */,
@@ -205,7 +202,6 @@
 			mainGroup = D887F7EE3002548D00BC205E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F10000000000000000000022 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				D887F8053002553C00BC205E /* XCRemoteSwiftPackageReference "swift-markdown-engine" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -400,7 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = Segno.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -434,7 +430,7 @@
 				CODE_SIGN_ENTITLEMENTS = Segno.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -464,7 +460,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -491,7 +487,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4P3N4NY7BH;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -551,14 +547,6 @@
 				minimumVersion = 0.8.0;
 			};
 		};
-		F10000000000000000000022 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.10.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -576,11 +564,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D887F8053002553C00BC205E /* XCRemoteSwiftPackageReference "swift-markdown-engine" */;
 			productName = MarkdownEngineLatex;
-		};
-		F10000000000000000000021 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F10000000000000000000022 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

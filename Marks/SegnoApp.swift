@@ -88,8 +88,6 @@ extension FocusedValues {
 
 @main
 struct SegnoApp: App {
-    @StateObject private var updater = SegnoUpdater()
-
     var body: some Scene {
         DocumentGroup(newDocument: { MarkdownDocument() }) { file in
             ContentView(document: file.document, fileURL: file.fileURL)
@@ -101,7 +99,7 @@ struct SegnoApp: App {
         .restorationBehavior(.automatic)
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .commands {
-            AppInformationCommands(updater: updater)
+            AppInformationCommands()
             ReadOnlyCommands()
             NavigationCommands()
             DocumentCommands()
@@ -153,16 +151,12 @@ private struct DocumentLaunchView: View {
 
 private struct AppInformationCommands: Commands {
     @Environment(\.openWindow) private var openWindow
-    @ObservedObject var updater: SegnoUpdater
 
     var body: some Commands {
         CommandGroup(replacing: .appInfo) {
             Button("About Segno") {
                 openWindow(id: "about")
             }
-
-            Button("Check for Updates…", action: updater.checkForUpdates)
-                .disabled(!updater.canCheckForUpdates)
         }
     }
 }
